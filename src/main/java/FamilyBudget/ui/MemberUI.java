@@ -2,6 +2,7 @@ package FamilyBudget.ui;
 
 import FamilyBudget.controller.MemberController;
 import FamilyBudget.exceptions.InvalidBudgetException;
+import FamilyBudget.exceptions.InvalidIdException;
 import FamilyBudget.exceptions.InvalidNameException;
 import FamilyBudget.exceptions.InvalidTypeException;
 import FamilyBudget.model.Entry;
@@ -64,6 +65,8 @@ public class MemberUI {
                 try {
                     ctrl.addMember(aMemebr);
                 } catch (InvalidNameException e) {
+                    System.out.println(e.getMessage() + " Please try again.");
+                } catch (InvalidIdException e) {
                     System.out.println(e.getMessage() + " Please try again.");
                 }
 

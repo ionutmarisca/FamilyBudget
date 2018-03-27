@@ -1,6 +1,7 @@
 package FamilyBudget.controller;
 
 import FamilyBudget.exceptions.InvalidBudgetException;
+import FamilyBudget.exceptions.InvalidIdException;
 import FamilyBudget.exceptions.InvalidNameException;
 import FamilyBudget.exceptions.InvalidTypeException;
 import FamilyBudget.model.Entry;
@@ -18,7 +19,7 @@ public class MemberController {
         this.mr = newMr;
     }
 
-    public void addMember(Member aMemebr) throws InvalidNameException {
+    public void addMember(Member aMemebr) throws InvalidNameException, InvalidIdException {
         mr.addMember(aMemebr);
     }
 
