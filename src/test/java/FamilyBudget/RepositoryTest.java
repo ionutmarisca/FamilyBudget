@@ -19,7 +19,7 @@ public class RepositoryTest {
     }
 
     @Test
-    public void testCase1() {
+    public void testAddValues() {
         assertEquals(0, memberRepository.getAllMembers().size());
         try {
             memberRepository.addMember(new Member("Pop A", "1"));
