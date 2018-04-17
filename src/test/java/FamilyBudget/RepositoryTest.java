@@ -107,4 +107,15 @@ public class RepositoryTest {
     public void testAddEntry() throws InvalidBudgetException, InvalidTypeException {
         memberRepository.addEntry(new Entry("test", 250, 20));
     }
+
+    @Test(expected = InvalidBudgetException.class)
+    public void testAddEntryInvalidValue() throws InvalidBudgetException, InvalidTypeException {
+        memberRepository.addEntry(new Entry("income", -400, 20));
+    }
+
+    @Test()
+    public void testAddEntrySuccess() throws InvalidBudgetException, InvalidTypeException {
+        memberRepository.addEntry(new Entry("income", 400, 20));
+        assertEquals(1, memberRepository.getAllEntries().size());
+    }
 }
